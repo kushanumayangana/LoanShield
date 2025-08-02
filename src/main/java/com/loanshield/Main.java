@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage stage) {
         try {
             primaryStage = stage;
-            loadScene("/step1.fxml", "LoanShield - Step 1");
+            loadScene("/Step1.fxml", "LoanShield - Step 1");
             System.out.println("Application started successfully.");
         } catch (Exception e) {
             System.err.println("Failed to start application:");
@@ -30,7 +30,9 @@ public class Main extends Application {
      */
     public static void loadScene(String fxmlPath, String windowTitle) {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlPath));
+            // Use the class loader to get the resource
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource(fxmlPath));
             Parent root = loader.load();
             Scene scene = new Scene(root);
 

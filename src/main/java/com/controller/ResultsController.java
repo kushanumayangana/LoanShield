@@ -1,7 +1,9 @@
-package com.loanshield;
+package com.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import com.loanshield.LoanApplicationData;
+import com.loanshield.Main;
 
 public class ResultsController {
 
