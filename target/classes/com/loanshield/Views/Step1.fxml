@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.loanshield.Step1Controller"
+      spacing="20" alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      prefWidth="600" prefHeight="400">
+
+    <Label text="Step 1: Personal Information"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="30"/>
+            <ColumnConstraints percentWidth="70"/>
+        </columnConstraints>
+        <padding>
+            <Insets top="10" right="20" bottom="10" left="20"/>
+        </padding>
+
+        <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="fullNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="NIC Number:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <TextField fx:id="nicField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Mobile Number:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <TextField fx:id="mobileField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="Email Address:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <TextField fx:id="emailField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+        <Label text="Address:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <TextField fx:id="addressField" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Next" onAction="#handleNext" />
+    </HBox>
+</VBox>
