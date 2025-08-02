@@ -5,13 +5,13 @@
 <?import javafx.geometry.Insets?>
 
 <ScrollPane fx:controller="com.controller.Step1Controller"
-      xmlns="http://javafx.com/javafx/20"
-      xmlns:fx="http://javafx.com/fxml/1"
-      prefWidth="800" prefHeight="800"
-      stylesheets="@/css/style.css"
-      fitToWidth="true">
+            xmlns="http://javafx.com/javafx/20"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="800" prefHeight="800"
+            stylesheets="@/css/style.css"
+            fitToWidth="true">
 
-    <!-- ✅ Main container wrapping ALL content -->
+    <!-- Main container wrapping ALL content -->
     <VBox spacing="30" alignment="TOP_CENTER">
 
         <!-- HEADER -->
@@ -105,6 +105,35 @@
                 <TextField fx:id="monthlyIncomeField" promptText="125,000" GridPane.rowIndex="3" GridPane.columnIndex="1" />
             </GridPane>
         </VBox>
+
+        <!-- Loan Request Details -->
+        <Label text="Loan Request Details"
+               style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="30"/>
+                <ColumnConstraints percentWidth="70"/>
+            </columnConstraints>
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <Label text="Requested Loan Amount (LKR):" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <TextField fx:id="requestedLoanAmountField" promptText="2,500,000" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+            <Label text="Loan Type:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <TextField fx:id="loanTypeField" promptText="Home Loan" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+            <Label text="Loan Term (Years):" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <TextField fx:id="loanTermField" promptText="15" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+        </GridPane>
+
+        
+
+    <Label text="Loan Term (Year):" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+<ComboBox fx:id="loanTermCombo" prefWidth="150" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
 
     </VBox>
 </ScrollPane>

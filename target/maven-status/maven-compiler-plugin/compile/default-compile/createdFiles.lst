@@ -1,4 +1,2 @@
-com\loanshield\Main.class
+com\loanshield\MainApp.class
 com\loanshield\LoanApplicationData.class
-com\loanshield\Step1Controller.class
-com\loanshield\ResultsController.class
