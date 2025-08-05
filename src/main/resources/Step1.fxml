@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
 <ScrollPane fx:controller="com.controller.Step1Controller"
             xmlns="http://javafx.com/javafx/20"
@@ -11,8 +11,11 @@
             stylesheets="@/css/style.css"
             fitToWidth="true">
 
-    <!-- Main container wrapping ALL content -->
-    <VBox spacing="30" alignment="TOP_CENTER">
+    <content>
+        <VBox spacing="40" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
 
         <!-- HEADER -->
         <VBox fx:id="header" styleClass="header" spacing="10">
@@ -44,96 +47,240 @@
             </VBox>
         </HBox>
 
-        <!-- FORM SECTION -->
-        <VBox fx:id="mainContent" spacing="20" alignment="TOP_CENTER">
+
+
+
+            <!-- FORM SECTION - Centered Cards -->
+            <VBox spacing="30" alignment="TOP_CENTER" maxWidth="600">
+
+                <!-- Personal Information Card -->
+                <VBox styleClass="form-card" spacing="20">
             <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
             </padding>
 
-            <!-- Personal Information -->
-            <Label text="Step 1: Personal Information"
-                   style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                    <Label text="Personal Information" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;" />
 
-            <GridPane hgap="10" vgap="10">
+                    <GridPane hgap="15" vgap="15">
                 <columnConstraints>
-                    <ColumnConstraints percentWidth="30"/>
-                    <ColumnConstraints percentWidth="70"/>
+                            <ColumnConstraints percentWidth="35"/>
+                            <ColumnConstraints percentWidth="65"/>
                 </columnConstraints>
+
+                        <Label text="Full Name *" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="fullNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Enter your full name"/>
+
+                        <Label text="NIC Number *" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="nicField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="123456789v"/>
+
+                        <Label text="Phone Number *" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="mobileField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="+94 77 123 4567"/>
+
+                        <Label text="Email Address *" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="emailField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="your.email@example.com"/>
+
+                        <Label text="Address *" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="addressField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="Enter your address"/>
+                    </GridPane>
+                </VBox>
+
+
+
+
+
+                <!-- Employment & Job Details Card -->
+                <VBox styleClass="form-card" spacing="20">
                 <padding>
-                    <Insets top="10" right="20" bottom="10" left="20"/>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
                 </padding>
 
-                <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-                <TextField fx:id="fullNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                    <Label text="Employment and Job Details" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;" />
 
-                <Label text="NIC Number:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-                <TextField fx:id="nicField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
-
-                <Label text="Mobile Number:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-                <TextField fx:id="mobileField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
-
-                <Label text="Email Address:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
-                <TextField fx:id="emailField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
-
-                <Label text="Address:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
-                <TextField fx:id="addressField" GridPane.rowIndex="4" GridPane.columnIndex="1" />
-            </GridPane>
-
-            <!-- Employment Section -->
-            <Label text="Step 1: Employment And Job Details"
-                   style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-
-            <GridPane hgap="10" vgap="10">
+                    <GridPane hgap="15" vgap="15">
                 <columnConstraints>
-                    <ColumnConstraints percentWidth="30"/>
-                    <ColumnConstraints percentWidth="70"/>
+                            <ColumnConstraints percentWidth="35"/>
+                            <ColumnConstraints percentWidth="65"/>
                 </columnConstraints>
-                <padding>
-                    <Insets top="10" right="20" bottom="10" left="20"/>
-                </padding>
 
-                <Label text="Employment Type:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                        <Label text="Employment Type *" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
                 <TextField fx:id="employmentTypeField" promptText="Government Employee" GridPane.rowIndex="0" GridPane.columnIndex="1" />
 
-                <Label text="Job Title:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                        <Label text="Job Title *" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
                 <TextField fx:id="jobTitleField" promptText="Senior Software Engineer" GridPane.rowIndex="1" GridPane.columnIndex="1" />
 
-                <Label text="Duration Of Employment:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-                <TextField fx:id="employmentDurationField" promptText="3 Years 6 Months" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                        <Label text="Duration of Employment *" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="employmentDurationField" promptText="2 years 6 months" GridPane.rowIndex="2" GridPane.columnIndex="1" />
 
-                <Label text="Monthly Income (LKR):" GridPane.rowIndex="3" GridPane.columnIndex="0" />
-                <TextField fx:id="monthlyIncomeField" promptText="125,000" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                        <Label text="Monthly Income (LKR) *" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="monthlyIncomeField" promptText="LKR 120,000" GridPane.rowIndex="4" GridPane.columnIndex="1" />
             </GridPane>
         </VBox>
 
-        <!-- Loan Request Details -->
-        <Label text="Loan Request Details"
-               style="-fx-font-size: 18px; -fx-font-weight: bold;" />
 
-        <GridPane hgap="10" vgap="10">
-            <columnConstraints>
-                <ColumnConstraints percentWidth="30"/>
-                <ColumnConstraints percentWidth="70"/>
-            </columnConstraints>
-            <padding>
-                <Insets top="10" right="20" bottom="10" left="20"/>
-            </padding>
 
-            <Label text="Requested Loan Amount (LKR):" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-            <TextField fx:id="requestedLoanAmountField" promptText="2,500,000" GridPane.rowIndex="0" GridPane.columnIndex="1" />
 
-            <Label text="Loan Type:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-            <TextField fx:id="loanTypeField" promptText="Home Loan" GridPane.rowIndex="1" GridPane.columnIndex="1" />
 
-            <Label text="Loan Term (Years):" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-            <TextField fx:id="loanTermField" promptText="15" GridPane.rowIndex="2" GridPane.columnIndex="1" />
-        </GridPane>
+                <!-- Loan Request Details Card -->
+                <VBox styleClass="form-card" spacing="20">
+                <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                </padding>
 
+                    <Label text="Loan Request Details" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;" />
+
+                    <GridPane hgap="15" vgap="15">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="35"/>
+                            <ColumnConstraints percentWidth="65"/>
+                        </columnConstraints>
+
+                        <Label text="Requested Loan Amount (LKR) *" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="requestedLoanAmountField" promptText="2,500,000" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                        <Label text="Loan Type *" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="loanTypeField" promptText="Home Loan" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                        <Label text="Loan Term (Years) *" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                    <TextField fx:id="loanTermField" promptText="15" />
+                 
+                </HBox>
+            </GridPane>
+                </VBox>
+
+
+
+
+                <!-- Financial & Credit Information Card -->
+                <VBox styleClass="form-card" spacing="20">
+                    <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+                    
+                    <!-- Header with icon and title -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                    
+                        <Label text="Financial and Credit Information" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;" />
+                    </HBox>
+
+                    <VBox spacing="20">
+                        <Label text="Do you have any existing loans? *" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+                        <HBox spacing="20">
+                            <RadioButton fx:id="existingLoansYes" text="Yes" selected="true" onAction="#handleExistingLoansSelection"/>
+                            <RadioButton fx:id="existingLoansNo" text="No" onAction="#handleExistingLoansSelection"/>
+                        </HBox>
+
+                        <!-- Conditional fields for existing loans -->
+                        <VBox fx:id="existingLoansFields" spacing="15" visible="true">
+                            <GridPane hgap="15" vgap="15">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50"/>
+                                    <ColumnConstraints percentWidth="50"/>
+                                </columnConstraints>
+
+                                <Label text="Total Outstanding Loan Amount (LKR) *" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                                <TextField fx:id="totalOutstandingAmount" promptText="0" text="LKR 450,000" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Monthly Loan Installments (LKR) *" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                                <TextField fx:id="monthlyInstallments" promptText="0" text="LKR 36,500" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                            </GridPane>
+                        </VBox>
+
+                        <!-- Credit Info -->
+                        <VBox spacing="10">
+                            <Label text="Credit Information" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                            <GridPane hgap="15" vgap="15">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="35"/>
+                                    <ColumnConstraints percentWidth="65"/>
+                                </columnConstraints>
+                                <Label text="Credit Score (CRIB) *" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                                <TextField fx:id="creditScore" promptText="Enter your credit score" text="750" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                            </GridPane>
+                        </VBox>
+                    </VBox>
+
+                </VBox>
+
+
+                                  <HBox spacing="20" alignment="CENTER">
+                         <Button text="Submit Application" styleClass="submit-button" onAction="#handleNextButton"/>
+                  </HBox>
+
+            </VBox>
+
+                        <!-- Risk Score Dashboard -->
+            <VBox styleClass="risk-score-container" spacing="30">
+                <padding>
+                    <Insets top="30" right="30" bottom="30" left="30"/>
+                </padding>
+                <Label text="Risk Assessment Results" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;"/>
+
+
+                <HBox spacing="40" alignment="CENTER">
+          
+                    <!-- Main Score Circle -->
+                    <VBox alignment="CENTER" spacing="15" styleClass="main-score-section">
+                        <VBox styleClass="score-circle" alignment="CENTER" spacing="5">
+                            <Label text="78" styleClass="main-score"/>
+                            <Label text="Risk Score" styleClass="score-label"/>
+                        </VBox>
+                        <Label text="Good Risk Profile" styleClass="profile-title"/>
+                        <Label text="Your application shows a strong financial profile with manageable risk factors." 
+                               wrapText="true" styleClass="profile-description" maxWidth="200"/>
+                    </VBox>
+                    
+
+                    <!-- Score Breakdown Cards -->
+                    <VBox spacing="15">
+                        <HBox spacing="15">
+                            <VBox styleClass="score-card income-card" spacing="10">
+                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                    <Label text="Income Score" styleClass="score-title"/>
+                                    <Label text="85" styleClass="score-value"/>
+                                </HBox>
+                                <ProgressBar progress="0.85" styleClass="income-progress"/>
+                                <Label text="Stable income with good earning capacity" 
+                                       wrapText="true" styleClass="score-description"/>
+                            </VBox>
+
+                            <VBox styleClass="score-card debt-card" spacing="10">
+                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                    <Label text="Debt Burden" styleClass="score-title"/>
+                                    <Label text="72" styleClass="score-value"/>
+                                </HBox>
+                                <ProgressBar progress="0.72" styleClass="debt-progress"/>
+                                <Label text="Moderate existing debt obligations" 
+                                       wrapText="true" styleClass="score-description"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox spacing="15">
+                            <VBox styleClass="score-card credit-card" spacing="10">
+                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                    <Label text="Credit Rating" styleClass="score-title"/>
+                                    <Label text="80" styleClass="score-value"/>
+                                </HBox>
+                                <ProgressBar progress="0.80" styleClass="credit-progress"/>
+                                <Label text="Good credit history and payment behavior" 
+                                       wrapText="true" styleClass="score-description"/>
+                            </VBox>
+
+                            <VBox styleClass="score-card employment-card" spacing="10">
+                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                    <Label text="Employment" styleClass="score-title"/>
+                                    <Label text="75" styleClass="score-value"/>
+                                </HBox>
+                                <ProgressBar progress="0.75" styleClass="employment-progress"/>
+                                <Label text="Stable employment with good tenure" 
+                                       wrapText="true" styleClass="score-description"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </VBox>
         
-
-    <Label text="Loan Term (Year):" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-<ComboBox fx:id="loanTermCombo" prefWidth="150" GridPane.rowIndex="2" GridPane.columnIndex="1" />
-
-
     </VBox>
+    </content>
 </ScrollPane>

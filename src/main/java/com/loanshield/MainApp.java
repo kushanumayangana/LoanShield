@@ -1,5 +1,7 @@
 package com.loanshield;
 
+import java.net.URL;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,15 +13,21 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Load the FXML file from resources
-            Parent root = FXMLLoader.load(getClass().getResource("/step1.fxml"));
+            URL fxmlLocation = getClass().getResource("/step1.fxml");
 
-            // Set up the primary stage
+            if (fxmlLocation == null) {
+                System.err.println("ERROR: FXML file '/step1.fxml' not found in resources.");
+                return;
+            }
+
+            Parent root = FXMLLoader.load(fxmlLocation);
+
             primaryStage.setTitle("LoanShield");
             primaryStage.setScene(new Scene(root, 800, 800));
             primaryStage.show();
 
         } catch (Exception e) {
+            System.err.println("An error occurred while loading the application:");
             e.printStackTrace();
         }
     }
