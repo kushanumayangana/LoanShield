@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.controller.RegisterController"
+            stylesheets="@/css/style.css">
+    <center>
+        <VBox spacing="12" alignment="CENTER" styleClass="form-card">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+            <Label text="Create Account" styleClass="section-title"/>
+            <TextField fx:id="usernameField" promptText="Username"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <PasswordField fx:id="secretKeyField" promptText="Secret key"/>
+            <HBox spacing="10">
+                <Button text="Register" onAction="#handleRegister" styleClass="save-button-primary"/>
+                <Button text="Back to Login" onAction="#handleBack" styleClass="secondary-button"/>
+            </HBox>
+            <Label fx:id="messageLabel" textFill="red"/>
+        </VBox>
+    </center>
+</BorderPane>
+

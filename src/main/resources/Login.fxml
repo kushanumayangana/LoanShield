@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.controller.LoginController"
+            stylesheets="@/css/style.css">
+    <center>
+        <VBox spacing="15" alignment="CENTER" styleClass="form-card">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+            <Label text="LoanShield" styleClass="logo"/>
+            <Label text="Welcome back" styleClass="section-title"/>
+            <TextField fx:id="usernameField" promptText="Username"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <HBox spacing="10">
+                <Button text="Login" onAction="#handleLogin" styleClass="submit-button"/>
+                <Button text="Register" onAction="#handleGoRegister" styleClass="secondary-button"/>
+            </HBox>
+            <Label fx:id="messageLabel" textFill="red"/>
+        </VBox>
+    </center>
+</BorderPane>
+ 

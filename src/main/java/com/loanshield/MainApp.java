@@ -1,35 +1,36 @@
 package com.loanshield;
 
-import java.net.URL;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+// INHERITANCE: This class extends the Application class from JavaFX
+//  inherits all methods and properties from Application class to main class 
 public class MainApp extends Application {
 
+    private static Stage primaryStage;
+
     @Override
-    public void start(Stage primaryStage) {
-        try {
-            URL fxmlLocation = getClass().getResource("/step1.fxml");
+    public void start(Stage stage) throws Exception {
+        primaryStage = stage;
+        showLoginPage();
+    }
 
-            if (fxmlLocation == null) {
-                System.err.println("ERROR: FXML file '/step1.fxml' not found in resources.");
-                return;
-            }
+    public void showLoginPage() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+        Scene scene = new Scene(loader.load());
+        primaryStage.setTitle("Login");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
-            Parent root = FXMLLoader.load(fxmlLocation);
-
-            primaryStage.setTitle("LoanShield");
-            primaryStage.setScene(new Scene(root, 800, 800));
-            primaryStage.show();
-
-        } catch (Exception e) {
-            System.err.println("An error occurred while loading the application:");
-            e.printStackTrace();
-        }
+    public void showStep1Page() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Step1.fxml"));
+        Scene scene = new Scene(loader.load());
+        primaryStage.setTitle("LoanShield");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {

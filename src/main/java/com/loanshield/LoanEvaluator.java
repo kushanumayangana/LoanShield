@@ -1,6 +1,12 @@
 package com.loanshield;
 
+import java.util.List;
+
+// ABSTRACTION
+
+
 public class LoanEvaluator {
+
 
     public LoanApprovalResult evaluate(LoanApplicationData app) {
         double monthlyIncome = app.getMonthlyIncome();
@@ -9,9 +15,9 @@ public class LoanEvaluator {
         double requestedLoanAmount = app.getRequestedLoanAmount();
         int employmentDuration = app.getEmploymentDuration(); // fixed from String to int
 
-        // Prevent division by zero
+
         if (monthlyIncome <= 0) {
-            return new LoanApprovalResult(false, "Monthly income must be greater than zero", 0);
+            return new LoanApprovalResult(false, List.of("Monthly income must be greater than zero"), 0);
         }
 
         double dti = monthlyInstallments / monthlyIncome;
@@ -19,14 +25,16 @@ public class LoanEvaluator {
         double loanToIncome = requestedLoanAmount / annualIncome;
 
         int riskScore = 0;
+        java.util.List<String> reasons = new java.util.ArrayList<>();
 
+        // ABSTRACTION: Complex business rules are encapsulated within this method
         // --- Debt-to-Income ---
         if (dti < 0.3) {
             riskScore += 25;
         } else if (dti < 0.4) {
             riskScore += 15;
         } else {
-            return new LoanApprovalResult(false, "Too much existing debt (DTI > 40%)", riskScore);
+            reasons.add("Too much existing debt (DTI > 40%)");
         }
 
         // --- Credit Score ---
@@ -35,7 +43,7 @@ public class LoanEvaluator {
         } else if (creditScore >= 650) {
             riskScore += 15;
         } else {
-            return new LoanApprovalResult(false, "Low credit score (CRIB < 650)", riskScore);
+            reasons.add("Low credit score (CRIB < 650)");
         }
 
         // --- Employment Stability ---
@@ -44,7 +52,7 @@ public class LoanEvaluator {
         } else if (employmentDuration >= 12) {
             riskScore += 15;
         } else {
-            return new LoanApprovalResult(false, "Insufficient employment history (< 1 year)", riskScore);
+            reasons.add("Insufficient employment history (< 1 year)");
         }
 
         // --- Loan-to-Income Ratio ---
@@ -53,13 +61,16 @@ public class LoanEvaluator {
         } else if (loanToIncome <= 5.0) {
             riskScore += 15;
         } else {
-            return new LoanApprovalResult(false, "Requested loan exceeds affordability", riskScore);
+            reasons.add("Requested loan exceeds affordability");
         }
 
-        boolean approved = riskScore >= 50;
-        String reason = approved ? "Approved" : "Rejected due to low risk score";
+        boolean approved = reasons.isEmpty() && riskScore >= 65;
+        if (approved) {
+            reasons.add("Approved");
+        } else if (reasons.isEmpty()) {
+            reasons.add("Rejected due to low risk score");
+        }
 
-        return new LoanApprovalResult(approved, reason, riskScore);
+        return new LoanApprovalResult(approved, reasons, riskScore);
     }
-
 }

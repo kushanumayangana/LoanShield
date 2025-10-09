@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fx:controller="com.controller.rejectController"
+            xmlns="http://javafx.com/javafx/20"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="800" prefHeight="800"
+            stylesheets="@/css/style.css"
+            fitToWidth="true">
+
+    <content>
+        <VBox spacing="40" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+        
+        <!-- Loan Rejection Report Section -->
+            <VBox spacing="25" alignment="TOP_CENTER" styleClass="form-card">
+                <padding>
+                    <Insets top="30" right="30" bottom="30" left="30"/>
+                </padding>
+
+                <!-- Report Header with Logo -->
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                    
+                        <VBox alignment="CENTER_LEFT" spacing="2">
+                            <Label text="LoanShield" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                       
+                        </VBox>
+                    </HBox>
+                    <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
+                    <VBox alignment="CENTER_RIGHT">
+                        <Label text="Report ID: RPT-2024-0315-002" style="-fx-text-fill: white;"/>
+                        <Label text="Generated: March 15, 2024" style="-fx-text-fill: white;"/>
+                    </VBox>
+                </HBox>
+                
+                <!-- Background color bar (dark red) -->
+                <Region style="-fx-background-color: #8B0000; -fx-pref-height: 50;"/>
+
+                <!-- Rejection Status -->
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Label text="✕" style="-fx-font-size: 24px; -fx-text-fill: #dc2626; -fx-font-weight: bold;"/>
+                    <VBox spacing="5">
+                        <Label text="Application Not Approved" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #dc2626;"/>
+                        <Label text="Unfortunately, your loan application does not meet our current approval criteria." style="-fx-text-fill: #dc2626;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Applicant Info -->
+                <VBox spacing="10" alignment="TOP_LEFT">
+                    <Label text="Applicant Information" styleClass="section-title"/>
+                    <GridPane hgap="20" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="40"/>
+                            <ColumnConstraints percentWidth="60"/>
+                        </columnConstraints>
+
+                        <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Label fx:id="fullNameLabel" text="Applicant Name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="NIC Number:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <Label fx:id="nicLabel" text="NIC Number" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Application Date:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <Label fx:id="applicationDateLabel" text="Application Date" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Loan Amount:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <Label fx:id="loanAmountLabel" text="Loan Amount" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <Label text="Loan Purpose:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <Label text="General Loan" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </VBox>
+
+                <!-- Risk Assessment Result -->
+                <VBox spacing="10" alignment="CENTER">
+                    <Label fx:id="riskScoreLabel" text="45" style="-fx-font-size: 48px; -fx-font-weight: bold;"/>
+                    <Label fx:id="riskProfileLabel" text="Poor Risk Profile" style="-fx-text-fill: #dc2626; -fx-font-size: 16px;"/>
+                </VBox>
+
+                <!-- Rejection Reasons -->
+                <VBox spacing="10" style="-fx-background-color: #fef2f2; -fx-border-color: #dc2626; -fx-padding: 20;">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="ℹ" style="-fx-font-size: 16px; -fx-text-fill: #2563eb;"/>
+                        <Label text="Primary Rejection Factors" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2563eb;"/>
+                    </HBox>
+                    
+                    <VBox spacing="8" fx:id="rejectionReasonsContainer">
+                        <!-- Rejection reasons will be added dynamically -->
+                    </VBox>
+                </VBox>
+
+                <!-- Signature -->
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <VBox spacing="5">
+                        
+                        <Label text="Date: March 15, 2024"/>
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <VBox alignment="CENTER" style="-fx-border-color: #dc2626; -fx-border-width: 2; -fx-padding: 10;">
+                        <Label text="REJECTED" style="-fx-text-fill: #dc2626; -fx-font-weight: bold;"/>
+                        <Label text="LoanShield"/>
+                        
+                    </VBox>
+                </HBox>
+
+                <!-- Back and Save Buttons -->
+                <HBox alignment="CENTER_LEFT" spacing="20">
+                    <Button text="Back to Application" onAction="#handleBackButton" styleClass="submit-button"/>
+                    <Button fx:id="saveButton" text="Save" onAction="#handleSaveButton" styleClass="save-button-danger"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>
