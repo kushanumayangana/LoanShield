@@ -344,3 +344,441 @@
 .save-button-danger:hover {
     -fx-background-color: #b91c1c; /* red-700 */
 }
+
+/* Register & Login screens */
+.register-root, .login-root {
+    -fx-background-color: linear-gradient(to bottom right, #0f172a, #1d4ed8);
+}
+
+.register-layout, .login-layout {
+    -fx-padding: 60;
+    -fx-max-width: 1200;
+    -fx-alignment: center;
+}
+
+/* Hero panels */
+.register-hero {
+    -fx-pref-width: 560;
+    -fx-max-width: 640;
+    -fx-padding: 20 0;
+}
+
+.register-hero-canvas {
+    -fx-background-color: linear-gradient(to bottom right, rgba(30, 64, 175, 0.22), rgba(15, 23, 42, 0.05));
+    -fx-background-radius: 36;
+    -fx-min-height: 400;
+    -fx-max-height: 440;
+    -fx-min-width: 560;
+    -fx-max-width: 600;
+}
+
+.register-hero-content {
+    -fx-background-color: rgba(15, 23, 42, 0.38);
+    -fx-background-radius: 32;
+    -fx-border-radius: 32;
+    -fx-border-color: rgba(255, 255, 255, 0.16);
+    -fx-border-width: 1;
+    -fx-padding: 28 32 32 32;
+}
+
+.register-hero-metrics {
+    -fx-background-color: rgba(15, 23, 42, 0.55);
+    -fx-background-radius: 26;
+    -fx-padding: 20 24;
+}
+
+.register-metric-card {
+    -fx-background-color: rgba(37, 99, 235, 0.32);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(96, 165, 250, 0.25);
+    -fx-border-width: 1;
+    -fx-padding: 16 18;
+    -fx-pref-width: 220;
+    -fx-max-width: 240;
+}
+
+.register-metric-title {
+    -fx-text-fill: rgba(226, 232, 240, 0.85);
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+.register-metric-value {
+    -fx-text-fill: #f8fafc;
+    -fx-font-size: 28px;
+    -fx-font-weight: 700;
+}
+
+.register-metric-note {
+    -fx-text-fill: rgba(226, 232, 240, 0.78);
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+}
+
+.register-hero-highlights {
+    -fx-background-color: rgba(15, 23, 42, 0.4);
+    -fx-background-radius: 26;
+    -fx-padding: 18 22;
+    -fx-spacing: 10;
+}
+
+.register-highlight-bullet {
+    -fx-text-fill: rgba(96, 165, 250, 0.95);
+    -fx-font-size: 20px;
+}
+
+.register-highlight-text {
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+    -fx-font-size: 13px;
+    -fx-wrap-text: true;
+}
+
+.login-hero {
+    -fx-pref-width: 520;
+    -fx-max-width: 600;
+    -fx-spacing: 18;
+}
+
+.register-title, .login-title {
+    -fx-font-size: 42px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #f8fafc;
+}
+
+.register-subtitle, .login-subtitle {
+    -fx-font-size: 16px;
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+    -fx-max-width: 420;
+}
+
+.register-points, .login-points {
+    -fx-background-color: rgba(15, 23, 42, 0.35);
+    -fx-background-radius: 20;
+    -fx-padding: 18;
+}
+
+.register-highlight, .login-highlight {
+    -fx-text-fill: #e0f2fe;
+    -fx-font-size: 14px;
+}
+
+.register-card, .login-card {
+    -fx-max-width: 420;
+    -fx-min-width: 380;
+    -fx-padding: 32 36 36 36;
+    -fx-background-color: rgba(15, 23, 42, 0.72);
+    -fx-background-radius: 28;
+    -fx-border-radius: 28;
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.55), 30, 0.2, 0, 18);
+}
+
+.register-card-title, .login-card-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #f8fafc;
+}
+
+
+.register-field, .login-field {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-border-color: transparent;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 14 18;
+    -fx-font-size: 14px;
+    -fx-text-fill: #f8fafc;
+    -fx-prompt-text-fill: rgba(226, 232, 240, 0.55);
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.35), 12, 0.15, 0, 4);
+    -fx-transition: all 0.25s ease;
+}
+
+.register-field:hover, .login-field:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.18);
+}
+
+.register-field:focused, .login-field:focused {
+    -fx-background-color: rgba(29, 78, 216, 0.22);
+    -fx-border-color: linear-gradient(to right, rgba(96, 165, 250, 0.9), rgba(59, 130, 246, 0.95));
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.45), 20, 0.3, 0, 6);
+}
+
+.register-actions, .login-actions {
+    -fx-padding: 12 0 0 0;
+}
+
+.register-primary, .login-primary {
+    -fx-background-color: linear-gradient(to right, #2563eb, #1d4ed8);
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: 700;
+    -fx-padding: 12 32;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+}
+
+.register-primary:hover, .login-primary:hover {
+    -fx-background-color: linear-gradient(to right, #1d4ed8, #1e3a8a);
+}
+
+.register-secondary, .login-secondary {
+    -fx-background-color: rgba(15, 23, 42, 0.35);
+    -fx-text-fill: rgba(248, 250, 252, 0.85);
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-border-width: 1.6;
+    -fx-padding: 12 30;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+}
+
+.register-secondary:hover, .login-secondary:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.18);
+}
+
+.register-message, .login-message {
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
+
+/* === Professional system styles & responsive improvements === */
+:root {
+    /* color palette */
+    -primary: #1d4ed8; /* blue-700 */
+    -primary-600: #2563eb;
+    -accent: #10b981; /* emerald-500 */
+    -muted: #6b7280;
+    -bg: #f8f9fc;
+    -card: #ffffff;
+    -border: #e6eaf2;
+
+    /* typography */
+    -font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -base-font-size: 14px;
+}
+
+/* Global adjustments */
+.root {
+    -fx-font-family: var(-font-family);
+    -fx-font-size: var(-base-font-size);
+    -fx-background-color: var(-bg);
+    -fx-padding: 0;
+}
+
+/* App container wrapper to help centering and responsiveness */
+.app-container {
+    -fx-padding: 24;
+    -fx-alignment: center;
+}
+
+/* Lightweight navbar (optional element) */
+.topbar {
+    -fx-background-color: linear-gradient(to right, derive(var(-primary), 0%), derive(var(-primary-600), 0%));
+    -fx-padding: 12 20;
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+}
+.topbar .title {
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* More compact and professional form-card variant */
+.form-card {
+    -fx-background-color: var(-card);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(3, 7, 18, 0.06), 16, 0, 0, 6);
+    -fx-border-color: var(-border);
+    -fx-border-width: 1;
+    -fx-min-width: 320;
+    -fx-max-width: 820;
+    -fx-padding: 20;
+}
+
+/* Improved label hierarchy */
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #0f172a; /* slate-900 */
+}
+.logo {
+    -fx-text-fill: var(-primary);
+    -fx-font-size: 28px;
+    -fx-font-weight: 700;
+}
+
+/* Buttons: subtle elevation and focus states */
+.button, .submit-button, .save-button-primary, .save-button-danger, .secondary-button {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 3);
+    -fx-focus-color: derive(var(-primary), -20%);
+}
+
+.secondary-button {
+    -fx-border-color: transparent;
+}
+
+/* TableView professional styling */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8;
+}
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+.table-view .column-header, .table-view .column-header .label {
+    -fx-font-weight: 600;
+    -fx-text-fill: #374151; /* gray-700 */
+}
+.table-view .table-row-cell:odd {
+    -fx-background-color: rgba(15,23,42,0.03); /* subtle zebra */
+}
+.table-view .table-row-cell:focused {
+    -fx-background-color: rgba(29,78,216,0.06);
+}
+.table-view .table-cell {
+    -fx-padding: 10 8;
+    -fx-text-fill: #0f172a;
+}
+
+/* Status badges */
+.badge {
+    -fx-padding: 4 8;
+    -fx-background-radius: 999;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-fill: white;
+}
+.badge.approved { -fx-background-color: #10b981; }
+.badge.rejected { -fx-background-color: #ef4444; }
+.badge.pending { -fx-background-color: #f59e0b; -fx-text-fill: #111827; }
+
+/* Risk color scale */
+.risk-low { -fx-background-color: #10b981; }
+.risk-medium { -fx-background-color: #f59e0b; }
+.risk-high { -fx-background-color: #ef4444; }
+
+/* Responsive tweaks for form cards and table */
+@media screen and (max-width: 1024px) {
+    .form-card { -fx-min-width: 360; -fx-max-width: 700; }
+    .logo { -fx-font-size: 24px; }
+}
+
+@media screen and (max-width: 768px) {
+    .form-card { -fx-min-width: 300; -fx-max-width: 560; -fx-padding: 18; }
+    .submit-button, .save-button-primary { -fx-padding: 10 18; -fx-font-size: 14px; }
+    .feature-section { -fx-padding: 30 20; }
+}
+
+@media screen and (max-width: 480px) {
+    .form-card { -fx-min-width: 260; -fx-max-width: 420; -fx-padding: 12; -fx-spacing: 10; }
+    .logo { -fx-font-size: 20px; }
+    .section-title { -fx-font-size: 18px; }
+
+    /* Make table view more mobile-friendly: stack rows into cards */
+    .table-view {
+        -fx-padding: 0;
+    }
+    .table-view .column-header { -fx-opacity: 0; -fx-min-height: 0; -fx-max-height: 0; }
+    .table-view .table-row-cell {
+        -fx-background-color: transparent;
+        -fx-padding: 8 0 8 0;
+        -fx-border-color: transparent;
+    }
+    .table-view .table-cell {
+        -fx-display: block;
+        -fx-padding: 6 12;
+        -fx-border-color: transparent;
+        -fx-pref-width: 100%;
+    }
+    /* Use a pseudo card around each row via row-cell style if needed in FXML */
+    .table-view .table-row-cell .row-card {
+        -fx-background-color: var(-card);
+        -fx-background-radius: 10;
+        -fx-padding: 10;
+        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 4);
+        -fx-spacing: 6;
+    }
+}
+
+/* Utility helpers */
+.muted { -fx-text-fill: var(-muted); }
+.text-italic { -fx-font-style: italic; }
+.small { -fx-font-size: 12px; }
+
+/* Accessibility: focus outlines for keyboard users */
+.button:focused, .text-field:focused, .password-field:focused {
+    -fx-effect: dropshadow(gaussian, rgba(29,78,216,0.15), 8, 0, 0, 4);
+    -fx-border-color: derive(var(-primary), -12%);
+}
+
+/* Slightly upscale spacing for forms on big screens */
+@media screen and (min-width: 1200px) {
+    .form-card { -fx-min-width: 520; -fx-padding: 30; }
+}
+
+/* End of responsive & professional additions */
+
+/* === Standard CSS fallbacks for editor/linter compatibility ===
+   These do not affect JavaFX rendering (which uses -fx- properties)
+   but provide standard property equivalents so linters/editors stop warning.
+*/
+:root {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f8f9fc;
+}
+
+.root {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: inherit;
+    padding: 0;
+}
+
+.app-container { padding: 24px; }
+.topbar { background: linear-gradient(to right, #1d4ed8, #2563eb); padding: 12px 20px; }
+.topbar .title { font-size: 18px; color: white; font-weight: 700; }
+
+.form-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e6eaf2;
+    min-width: 320px;
+    max-width: 820px;
+    padding: 20px;
+}
+
+.section-title { font-size: 20px; font-weight: 600; color: #0f172a; }
+.logo { color: #1d4ed8; font-size: 28px; font-weight: 700; }
+
+.button, .submit-button, .save-button-primary, .save-button-danger, .secondary-button {
+    cursor: pointer;
+}
+
+.table-view { background-color: transparent; border: none; padding: 8px; }
+.table-view .table-cell { padding: 10px 8px; color: #0f172a; }
+
+.badge { padding: 4px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; color: white; }
+.badge.pending { color: #111827; }
+
+/* Responsive fallbacks (media queries copied for editor parity) */
+@media screen and (max-width: 1024px) {
+    .form-card { min-width: 360px; max-width: 700px; }
+    .logo { font-size: 24px; }
+}
+@media screen and (max-width: 768px) {
+    .form-card { min-width: 300px; max-width: 560px; padding: 18px; }
+}
+@media screen and (max-width: 480px) {
+    .form-card { min-width: 260px; max-width: 420px; padding: 12px; }
+    .logo { font-size: 20px; }
+}
+
+/* End of standard fallbacks */

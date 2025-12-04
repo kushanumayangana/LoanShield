@@ -2,7 +2,9 @@ package com.loanshield;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 // INHERITANCE: This class extends the Application class from JavaFX
@@ -18,10 +20,11 @@ public class MainApp extends Application {
     }
 
     public void showLoginPage() throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
         Scene scene = new Scene(loader.load());
         primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
+        fitToScreen(primaryStage);
         primaryStage.show();
     }
 
@@ -30,10 +33,21 @@ public class MainApp extends Application {
         Scene scene = new Scene(loader.load());
         primaryStage.setTitle("LoanShield");
         primaryStage.setScene(scene);
+        fitToScreen(primaryStage);
         primaryStage.show();
     }
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void fitToScreen(Stage stage) {
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        stage.setX(bounds.getMinX());
+        stage.setY(bounds.getMinY());
+        stage.setWidth(bounds.getWidth());
+        stage.setHeight(bounds.getHeight());
+        stage.setMaximized(true);
+        stage.centerOnScreen();
     }
 }
