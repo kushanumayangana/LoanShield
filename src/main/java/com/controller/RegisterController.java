@@ -1,15 +1,17 @@
 package com.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import javafx.scene.Node;
 
 // ENCAPSULATION: This class demonstrates encapsulation by:
 // 1. Using private fields for UI components (TextField, PasswordField, Label)
@@ -40,7 +42,7 @@ public class RegisterController {
             messageLabel.setStyle("-fx-text-fill: green;");
             messageLabel.setText("Registration successful! Redirecting to login...");
             // Automatically navigate to login page after successful registration
-            goTo("/login.fxml", event);
+            goTo("/Login.fxml", event);
         } else {
             messageLabel.setText("Registration failed. Check secret or username taken.");
         }
@@ -48,7 +50,7 @@ public class RegisterController {
 
     @FXML
     private void handleBack(ActionEvent event) {
-        goTo("/login.fxml", event);
+        goTo("/Login.fxml", event);
     }
 
     // ENCAPSULATION: Private method for internal navigation logic
@@ -57,11 +59,23 @@ public class RegisterController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            fitToScreen(stage);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void fitToScreen(Stage stage) {
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        stage.setX(bounds.getMinX());
+        stage.setY(bounds.getMinY());
+        stage.setWidth(bounds.getWidth());
+        stage.setHeight(bounds.getHeight());
+        stage.setMaximized(true);
+        stage.centerOnScreen();
     }
 }
 
