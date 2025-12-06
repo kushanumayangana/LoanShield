@@ -784,6 +784,243 @@
 
 /* End of responsive & professional additions */
 
+/* Search Page Styling */
+.search-root {
+    -fx-background-color: linear-gradient(to bottom, #f8fbff, #e2e8f0);
+}
+
+.search-header {
+    -fx-background-color: linear-gradient(to right, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.88));
+    -fx-background-radius: 36;
+    -fx-border-radius: 36;
+    -fx-border-color: rgba(191, 219, 254, 0.28);
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.45), 30, 0.32, 0, 18);
+}
+
+.search-title {
+    -fx-text-fill: #f8fafc;
+    -fx-font-size: 32px;
+    -fx-font-weight: 700;
+    -fx-text-alignment: center;
+}
+
+.search-bar-container {
+    -fx-padding: 8 0 0 0;
+    -fx-alignment: center;
+}
+
+.search-field {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(15, 23, 42, 0.1);
+    -fx-border-width: 1.2;
+    -fx-padding: 16 20;
+    -fx-font-size: 15px;
+    -fx-text-fill: #1f2937;
+    -fx-prompt-text-fill: rgba(107, 114, 128, 0.65);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0.2, 0, 4);
+}
+
+.search-field:hover {
+    -fx-border-color: rgba(59, 130, 246, 0.3);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.15), 16, 0.25, 0, 6);
+}
+
+.search-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: rgba(59, 130, 246, 0.7);
+    -fx-border-width: 1.6;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.35), 20, 0.3, 0, 8);
+}
+
+.search-button {
+    -fx-background-color: linear-gradient(to right, #2563eb, #1d4ed8);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 15px;
+    -fx-padding: 12 32;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.35), 12, 0.25, 0, 4);
+}
+
+.search-button:hover {
+    -fx-background-color: linear-gradient(to right, #1d4ed8, #1e3a8a);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.5), 18, 0.35, 0, 8);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.search-back-button {
+    -fx-background-color: rgba(15, 23, 42, 0.35);
+    -fx-text-fill: rgba(248, 250, 252, 0.9);
+    -fx-font-weight: 600;
+    -fx-font-size: 15px;
+    -fx-padding: 12 28;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-border-width: 1.4;
+    -fx-cursor: hand;
+}
+
+.search-back-button:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.18);
+    -fx-border-color: rgba(148, 197, 255, 0.4);
+}
+
+/* Search Results Table Styling */
+.search-results-container {
+    -fx-background-color: transparent;
+    -fx-spacing: 20;
+}
+
+.search-table {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(226, 232, 240, 0.6);
+    -fx-border-width: 1;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.1), 20, 0.25, 0, 8);
+}
+
+.search-table:focused {
+    -fx-border-color: rgba(59, 130, 246, 0.35);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.25), 26, 0.3, 0, 10);
+}
+
+.search-table .column-header-background {
+    -fx-background-color: linear-gradient(to right, rgba(37, 99, 235, 0.08), rgba(59, 130, 246, 0.08));
+    -fx-background-radius: 14;
+    -fx-padding: 8;
+}
+
+.search-table .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 10 8;
+}
+
+.search-table .column-header .label {
+    -fx-text-fill: #1e3a8a;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-text-alignment: center;
+}
+
+.search-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 8 0;
+    -fx-border-color: transparent;
+}
+
+.search-table .table-row-cell:odd {
+    -fx-background-color: rgba(15, 23, 42, 0.02);
+}
+
+.search-table .table-row-cell:even {
+    -fx-background-color: rgba(59, 130, 246, 0.02);
+}
+
+.search-table .table-row-cell:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.08);
+}
+
+.search-table .table-row-cell:selected {
+    -fx-background-color: linear-gradient(to right, rgba(59, 130, 246, 0.18), rgba(37, 99, 235, 0.15));
+    -fx-border-color: rgba(59, 130, 246, 0.25);
+    -fx-border-width: 0 0 1 0;
+}
+
+.search-table .table-cell {
+    -fx-padding: 12 10;
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent;
+}
+
+.search-table .table-cell:selected {
+    -fx-text-fill: #1d4ed8;
+    -fx-font-weight: 500;
+}
+
+.search-table .virtual-flow {
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+/* Status Badge Styling */
+.status-badge {
+    -fx-padding: 4 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-alignment: center;
+}
+
+.status-approved {
+    -fx-background-color: rgba(16, 185, 129, 0.15);
+    -fx-text-fill: #059669;
+    -fx-border-color: rgba(16, 185, 129, 0.25);
+    -fx-border-width: 0.8;
+}
+
+.status-pending {
+    -fx-background-color: rgba(245, 158, 11, 0.15);
+    -fx-text-fill: #d97706;
+    -fx-border-color: rgba(245, 158, 11, 0.25);
+    -fx-border-width: 0.8;
+}
+
+.status-rejected {
+    -fx-background-color: rgba(239, 68, 68, 0.15);
+    -fx-text-fill: #dc2626;
+    -fx-border-color: rgba(239, 68, 68, 0.25);
+    -fx-border-width: 0.8;
+}
+
+/* Risk Level Styling */
+.risk-low {
+    -fx-background-color: rgba(16, 185, 129, 0.15);
+    -fx-text-fill: #059669;
+    -fx-border-color: rgba(16, 185, 129, 0.25);
+    -fx-border-width: 0.8;
+    -fx-padding: 4 8;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+}
+
+.risk-medium {
+    -fx-background-color: rgba(245, 158, 11, 0.15);
+    -fx-text-fill: #d97706;
+    -fx-border-color: rgba(245, 158, 11, 0.25);
+    -fx-border-width: 0.8;
+    -fx-padding: 4 8;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+}
+
+.risk-high {
+    -fx-background-color: rgba(239, 68, 68, 0.15);
+    -fx-text-fill: #dc2626;
+    -fx-border-color: rgba(239, 68, 68, 0.25);
+    -fx-border-width: 0.8;
+    -fx-padding: 4 8;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+}
+
 /* === Standard CSS fallbacks for editor/linter compatibility ===
    These do not affect JavaFX rendering (which uses -fx- properties)
    but provide standard property equivalents so linters/editors stop warning.
