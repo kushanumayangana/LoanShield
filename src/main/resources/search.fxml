@@ -6,35 +6,40 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.controller.SearchController"
-            stylesheets="@/css/style.css">
+            stylesheets="@/css/style.css"
+            styleClass="search-root">
     <top>
-        <VBox spacing="10" styleClass="form-card">
+        <VBox spacing="20" alignment="CENTER" styleClass="search-header">
             <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
+                <Insets top="40" right="40" bottom="40" left="40"/>
             </padding>
-            <HBox spacing="10">
-                <TextField fx:id="searchField" promptText="Enter NIC to search" HBox.hgrow="ALWAYS"/>
-                <Button text="Search" onAction="#handleSearch" styleClass="submit-button"/>
-                <Button text="Back" onAction="#handleBack" styleClass="secondary-button"/>
+            <Label text="Search Applications" styleClass="search-title"/>
+            <HBox spacing="12" alignment="CENTER" maxWidth="600" styleClass="search-bar-container">
+                <TextField fx:id="searchField" promptText="Enter NIC to search" styleClass="search-field" HBox.hgrow="ALWAYS"/>
+                <Button text="Search" onAction="#handleSearch" styleClass="search-button"/>
+                <Button text="Back" onAction="#handleBack" styleClass="search-back-button"/>
             </HBox>
         </VBox>
     </top>
     <center>
-        <TableView fx:id="resultsTable">
-            <columns>
-                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
-                <TableColumn fx:id="colNic" text="NIC" prefWidth="120"/>
-                <TableColumn fx:id="colFullName" text="Full Name" prefWidth="160"/>
-                <TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
-                <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
-                <TableColumn fx:id="colMonthlyIncome" text="Monthly Income" prefWidth="120"/>
-                <TableColumn fx:id="colLoanAmount" text="Loan Amount" prefWidth="120"/>
-                <TableColumn fx:id="colLoanTerm" text="Term (yrs)" prefWidth="90"/>
-                <TableColumn fx:id="colStatus" text="Status" prefWidth="110"/>
-                <TableColumn fx:id="colRisk" text="Risk" prefWidth="70"/>
-            </columns>
-        </TableView>
+        <VBox spacing="20" styleClass="search-results-container">
+            <padding>
+                <Insets top="20" right="40" bottom="40" left="40"/>
+            </padding>
+            <TableView fx:id="resultsTable" styleClass="search-table">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colNic" text="NIC" prefWidth="120"/>
+                    <TableColumn fx:id="colFullName" text="Full Name" prefWidth="160"/>
+                    <TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                    <TableColumn fx:id="colMonthlyIncome" text="Monthly Income" prefWidth="120"/>
+                    <TableColumn fx:id="colLoanAmount" text="Loan Amount" prefWidth="120"/>
+                    <TableColumn fx:id="colLoanTerm" text="Term (yrs)" prefWidth="90"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="110"/>
+                    <TableColumn fx:id="colRisk" text="Risk" prefWidth="70"/>
+                </columns>
+            </TableView>
+        </VBox>
     </center>
 </BorderPane>
-
-
