@@ -12,7 +12,7 @@
             fitToWidth="true">
 
     <content>
-        <VBox spacing="40" alignment="TOP_CENTER">
+        <VBox spacing="40" alignment="TOP_CENTER" styleClass="app-page-bg">
             <padding>
                 <Insets top="40" right="40" bottom="40" left="40"/>
             </padding>
@@ -64,8 +64,11 @@
             <!-- FORM SECTION - Centered Cards -->
             <VBox spacing="30" alignment="TOP_CENTER" maxWidth="800">
 
-                <!-- Personal Information Card -->
-                <VBox styleClass="form-card" spacing="25">
+                <!-- Grouped Forms Section -->
+                <VBox spacing="24" styleClass="grouped-form-section">
+
+                    <!-- Personal Information Card -->
+                    <VBox styleClass="form-card" spacing="25">
                     <padding>
                         <Insets top="30" right="30" bottom="30" left="30"/>
                     </padding>
@@ -95,10 +98,10 @@
                             <TextField fx:id="emailField" styleClass="modern-field" promptText="your.email@example.com"/>
                         </VBox>
                     </HBox>
-                </VBox>
+                    </VBox>
 
-                <!-- Employment and Job Details Card -->
-                <VBox styleClass="form-card" spacing="25">
+                    <!-- Employment and Job Details Card -->
+                    <VBox styleClass="form-card" spacing="25">
                     <padding>
                         <Insets top="30" right="30" bottom="30" left="30"/>
                     </padding>
@@ -116,10 +119,10 @@
                             <TextField fx:id="monthlyIncomeField" styleClass="modern-field" promptText="LKR 120,000" />
                         </VBox>
                     </HBox>
-                </VBox>
+                    </VBox>
 
-                <!-- Loan Request Details Card -->
-                <VBox styleClass="form-card" spacing="25">
+                    <!-- Loan Request Details Card -->
+                    <VBox styleClass="form-card" spacing="25">
                     <padding>
                         <Insets top="30" right="30" bottom="30" left="30"/>
                     </padding>
@@ -137,10 +140,10 @@
                             <ComboBox fx:id="loanTermCombo" styleClass="modern-combo" />
                         </VBox>
                     </HBox>
-                </VBox>
+                    </VBox>
 
-                <!-- Financial and Credit Information Card -->
-                <VBox styleClass="form-card" spacing="25">
+                    <!-- Financial and Credit Information Card -->
+                    <VBox styleClass="form-card" spacing="25">
                     <padding>
                         <Insets top="30" right="30" bottom="30" left="30"/>
                     </padding>
@@ -182,6 +185,8 @@
                             </VBox>
                         </HBox>
                     </VBox>
+
+                </VBox>
                 </VBox>
 
                 <HBox spacing="20" alignment="CENTER">
@@ -195,7 +200,7 @@
                 <padding>
                     <Insets top="30" right="30" bottom="30" left="30"/>
                 </padding>
-                <Label text="Risk Assessment Results" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;"/>
+                <Label text="Risk Assessment Results" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #f8fafc;"/>
 
                 <HBox spacing="40" alignment="CENTER">
           
