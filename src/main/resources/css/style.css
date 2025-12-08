@@ -37,21 +37,24 @@
     -fx-effect: dropshadow(gaussian, rgba(43, 96, 214, 0.3), 5, 0, 2, 2);
 }
 
-/* Header styles */
+/* Header styles - with animated gradient effect */
 .header {
-    -fx-background-color: linear-gradient(to right, #1e40af, #3b82f6);
+    -fx-background-color: linear-gradient(to bottom right, rgba(30, 64, 175, 0.9), rgba(59, 130, 246, 0.85));
     -fx-min-height: 400;
+    -fx-background-radius: 0 0 40 40;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.3), 20, 0, 0, 10);
 }
 
 .header-content {
     -fx-padding: 60 0 0 0;
 }
 
-/* Logo style */
+/* Logo style - Light for dark background */
 .logo {
-    -fx-text-fill: white;
+    -fx-text-fill: #f8fafc;
     -fx-font-size: 28px;
     -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(96, 165, 250, 0.4), 10, 0.3, 0, 2);
 }
 
 /* Header title text */
@@ -64,9 +67,9 @@
     -fx-max-width: 600;
 }
 
-/* Apply button */
+/* Apply button - Glass morphism style */
 .apply-button {
-    -fx-background-color: white;
+    -fx-background-color: rgba(255, 255, 255, 0.95);
     -fx-text-fill: #1e40af;
     -fx-font-weight: bold;
     -fx-border-radius: 25;
@@ -74,92 +77,116 @@
     -fx-padding: 15 30;
     -fx-cursor: hand;
     -fx-font-size: 16px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 15, 0.3, 0, 6);
 }
 
-/* Button hover effect */
+/* Button hover effect with scale animation */
 .apply-button:hover {
-    -fx-background-color: #f8fafc;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0, 0, 6);
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.5), 25, 0.4, 0, 10);
     -fx-scale-x: 1.05;
     -fx-scale-y: 1.05;
 }
 
 /* Feature section */
 .feature-section {
-    -fx-background-color: white;
+    -fx-background-color: transparent;
     -fx-padding: 60 40;
 }
 
-/* Feature cards */
+/* Feature cards - Glass morphism style with dark theme */
 .feature-card {
-    -fx-background-color: #ffffff;
+    -fx-background-color: rgba(15, 23, 42, 0.65);
     -fx-padding: 30;
-    -fx-border-color: #e2e8f0;
+    -fx-border-color: rgba(96, 165, 250, 0.25);
     -fx-border-width: 1;
-    -fx-border-radius: 16;
-    -fx-background-radius: 16;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 4);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.2), 15, 0, 0, 8);
     -fx-pref-width: 300;
     -fx-max-width: 300;
     -fx-spacing: 20;
+    -fx-opacity: 0.95;
 }
 
 .feature-card:hover {
-    -fx-background-color: linear-gradient(to bottom right, #0b2b61, #2a60d6);
-    -fx-border-color: #1d4ed8;
-    -fx-border-width: 2;
-    -fx-effect: dropshadow(gaussian, rgba(43, 96, 214, 0.3), 10, 0, 4, 4);
-    -fx-scale-x: 1.02;
-    -fx-scale-y: 1.02;
+    -fx-background-color: linear-gradient(to bottom right, rgba(37, 99, 235, 0.7), rgba(59, 130, 246, 0.5));
+    -fx-border-color: rgba(147, 197, 253, 0.6);
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.5), 25, 0.4, 0, 12);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-opacity: 1;
 }
 
 .feature-card:hover .feature-title {
-    -fx-text-fill: white;
+    -fx-text-fill: #ffffff;
 }
 
 .feature-card:hover .label {
-    -fx-text-fill: #e6f3ff;
+    -fx-text-fill: rgba(224, 242, 254, 0.95);
 }
 
 .feature-title {
-    -fx-font-size: 16px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
+    -fx-text-fill: #f8fafc;
 }
 
 .feature-icon {
-    -fx-font-size: 24px;
+    -fx-font-size: 28px;
+    -fx-text-fill: #60a5fa;
+}
+
+.feature-description {
+    -fx-text-fill: rgba(226, 232, 240, 0.85);
+    -fx-font-size: 13px;
 }
 
 .scroll-pane {
     -fx-padding: 10;
 }
 
-/* Form card styling */
+/* Feature text styles for dark theme */
+.feature-card .feature-title { -fx-text-fill: #f8fafc; }
+.feature-card .label { -fx-text-fill: rgba(226, 232, 240, 0.85); }
+.feature-section .label { -fx-text-fill: rgba(226, 232, 240, 0.85); }
+
+/* Form card styling - Glass morphism for dark theme */
 .form-card {
-    -fx-background-color: white;
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 3, 3);
-    -fx-border-color: #f0f0f0;
+    -fx-background-color: rgba(30, 41, 59, 0.65);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.15), 20, 0.2, 0, 8);
+    -fx-border-color: rgba(96, 165, 250, 0.2);
     -fx-border-width: 1;
     -fx-min-width: 500;
     -fx-max-width: 600;
 }
 
+.form-card:hover {
+    -fx-border-color: rgba(96, 165, 250, 0.35);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.25), 25, 0.3, 0, 10);
+}
 
-
-/* Submit button */
+/* Submit button - Animated gradient with glow */
 .submit-button {
-    -fx-background-color: #1d4ed8;
+    -fx-background-color: linear-gradient(to right, #2563eb, #1d4ed8);
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 16px;
-    -fx-padding: 12 24;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
+    -fx-padding: 14 28;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
     -fx-cursor: hand;
-    -fx-transition: all 0.3s ease;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 15, 0.3, 0, 6);
+}
+
+.submit-button:hover {
+    -fx-background-color: linear-gradient(to right, #1d4ed8, #1e3a8a);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.6), 25, 0.4, 0, 10);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
 }
 
 /* Secondary/Cancel button style */
@@ -215,14 +242,17 @@
 }
 
 
-/* Risk Score Dashboard */
+/* Risk Score Dashboard - Dark Theme */
 .risk-score-container {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 16;
+    -fx-background-color: rgba(15, 23, 42, 0.6);
+    -fx-background-radius: 24;
     -fx-padding: 30;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 15, 0, 2, 2);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.2), 25, 0.25, 0, 10);
     -fx-min-width: 800;
     -fx-max-width: 1000;
+    -fx-border-color: rgba(96, 165, 250, 0.25);
+    -fx-border-width: 1;
+    -fx-border-radius: 24;
 }
 
 /* Main Score Section */
@@ -231,89 +261,115 @@
     -fx-max-width: 300;
 }
 
-/* Score Circle */
+/* Score Circle - Animated glow effect */
 .score-circle {
-    -fx-background-color: #f3f4f6;
-    -fx-background-radius: 50;
-    -fx-min-width: 120;
-    -fx-min-height: 120;
-    -fx-max-width: 120;
-    -fx-max-height: 120;
+    -fx-background-color: linear-gradient(to bottom right, rgba(37, 99, 235, 0.4), rgba(59, 130, 246, 0.3));
+    -fx-background-radius: 100;
+    -fx-min-width: 140;
+    -fx-min-height: 140;
+    -fx-max-width: 140;
+    -fx-max-height: 140;
     -fx-padding: 20;
     -fx-alignment: center;
+    -fx-border-color: rgba(96, 165, 250, 0.5);
+    -fx-border-width: 2;
+    -fx-border-radius: 100;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 20, 0.3, 0, 0);
 }
 
 /* Main Score */
 .main-score {
-    -fx-font-size: 40px;
+    -fx-font-size: 42px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1e3a8a;
+    -fx-text-fill: #f8fafc;
 }
 
 .score-label {
     -fx-font-size: 14px;
-    -fx-text-fill: #6b7280;
+    -fx-text-fill: rgba(147, 197, 253, 0.9);
 }
 
 .profile-title {
-    -fx-font-size: 16px;
-    -fx-text-fill: #10b981;
+    -fx-font-size: 18px;
+    -fx-text-fill: #34d399;
     -fx-font-weight: bold;
 }
 
 .profile-description {
     -fx-font-size: 12px;
-    -fx-text-fill: #4b5563;
+    -fx-text-fill: rgba(226, 232, 240, 0.8);
     -fx-max-width: 220px;
     -fx-text-alignment: center;
 }
 
-/* Score Cards */
+/* Score Cards - Glass morphism */
 .score-card {
-    -fx-background-color: #f9fafb;
-    -fx-background-radius: 10;
-    -fx-padding: 15;
-    -fx-spacing: 8;
+    -fx-background-color: rgba(30, 41, 59, 0.7);
+    -fx-background-radius: 14;
+    -fx-padding: 18;
+    -fx-spacing: 10;
     -fx-pref-width: 250;
+    -fx-border-color: rgba(96, 165, 250, 0.2);
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+}
+
+.score-card:hover {
+    -fx-background-color: rgba(37, 99, 235, 0.3);
+    -fx-border-color: rgba(96, 165, 250, 0.4);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.25), 15, 0.3, 0, 5);
 }
 
 .score-title {
     -fx-font-size: 13px;
     -fx-font-weight: bold;
-    -fx-text-fill: #374151;
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
 }
 
 .score-value {
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #111827;
+    -fx-text-fill: #f8fafc;
 }
 
 .score-description {
     -fx-font-size: 11px;
-    -fx-text-fill: #6b7280;
+    -fx-text-fill: rgba(226, 232, 240, 0.7);
 }
 
-/* Colored ProgressBars */
+/* Colored ProgressBars with glow for dark theme */
 .income-progress .bar {
-    -fx-background-color: #3b82f6;
+    -fx-background-color: linear-gradient(to right, #3b82f6, #60a5fa);
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.5), 8, 0.3, 0, 0);
 }
 .debt-progress .bar {
-    -fx-background-color: #f59e0b;
+    -fx-background-color: linear-gradient(to right, #f59e0b, #fbbf24);
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(245, 158, 11, 0.5), 8, 0.3, 0, 0);
 }
 .credit-progress .bar {
-    -fx-background-color: #10b981;
+    -fx-background-color: linear-gradient(to right, #10b981, #34d399);
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.5), 8, 0.3, 0, 0);
 }
 .employment-progress .bar {
-    -fx-background-color: #8b5cf6;
+    -fx-background-color: linear-gradient(to right, #8b5cf6, #a78bfa);
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(139, 92, 246, 0.5), 8, 0.3, 0, 0);
 }
 
-/* Optional: Remove background of ProgressBar track */
+/* Progress bar track for dark theme */
 .progress-bar {
     -fx-accent: transparent;
-    -fx-control-inner-background: #e5e7eb;
+    -fx-control-inner-background: rgba(30, 41, 59, 0.6);
     -fx-background-radius: 6;
-    -fx-pref-height: 6px;
+    -fx-pref-height: 8px;
+}
+
+.progress-bar .track {
+    -fx-background-color: rgba(30, 41, 59, 0.6);
+    -fx-background-radius: 6;
 }
 
 /* Save button variants */
@@ -345,9 +401,165 @@
     -fx-background-color: #b91c1c; /* red-700 */
 }
 
+/* ============================================
+   LOAN RESULT PAGES (Approval/Rejection)
+   ============================================ */
+
+/* Result card - Dark glass morphism with proper contrast */
+.result-card {
+    -fx-background-color: rgba(15, 23, 42, 0.85);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(96, 165, 250, 0.3);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.25), 30, 0.3, 0, 12);
+}
+
+/* Result page labels - light text for dark background */
+.result-card .label {
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+}
+
+.result-card .section-title {
+    -fx-text-fill: #f8fafc;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* Risk score display */
+.risk-score-display {
+    -fx-font-size: 56px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #60a5fa;
+}
+
+.risk-profile-good {
+    -fx-text-fill: #34d399;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.risk-profile-poor {
+    -fx-text-fill: #f87171;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Approved section - Green glass morphism */
+.approved-section {
+    -fx-background-color: rgba(16, 185, 129, 0.15);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(52, 211, 153, 0.5);
+    -fx-border-width: 1.5;
+    -fx-padding: 20;
+}
+
+.approved-section .label {
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+}
+
+.approved-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34d399;
+}
+
+.approved-badge {
+    -fx-background-color: rgba(16, 185, 129, 0.2);
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #34d399;
+    -fx-border-width: 2;
+    -fx-padding: 10 20;
+}
+
+.approved-badge .label {
+    -fx-text-fill: #34d399;
+    -fx-font-weight: bold;
+}
+
+/* Rejected section - Red glass morphism */
+.rejected-section {
+    -fx-background-color: rgba(239, 68, 68, 0.12);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(248, 113, 113, 0.5);
+    -fx-border-width: 1.5;
+    -fx-padding: 20;
+}
+
+.rejected-section .label {
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+}
+
+.rejected-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f87171;
+}
+
+.rejected-badge {
+    -fx-background-color: rgba(239, 68, 68, 0.2);
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #f87171;
+    -fx-border-width: 2;
+    -fx-padding: 10 20;
+}
+
+.rejected-badge .label {
+    -fx-text-fill: #f87171;
+    -fx-font-weight: bold;
+}
+
+/* Info section for rejection reasons */
+.info-section {
+    -fx-background-color: rgba(59, 130, 246, 0.12);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(96, 165, 250, 0.4);
+    -fx-border-width: 1;
+    -fx-padding: 20;
+}
+
+.info-section .label {
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+}
+
+.info-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #60a5fa;
+}
+
+/* Header bar decoration */
+.header-bar-approved {
+    -fx-background-color: linear-gradient(to right, #059669, #10b981);
+    -fx-background-radius: 8;
+    -fx-pref-height: 6;
+}
+
+.header-bar-rejected {
+    -fx-background-color: linear-gradient(to right, #dc2626, #ef4444);
+    -fx-background-radius: 8;
+    -fx-pref-height: 6;
+}
+
 /* Register & Login screens */
 .register-root, .login-root {
     -fx-background-color: linear-gradient(to bottom right, #0f172a, #1d4ed8);
+}
+
+/* Reusable app page background to match login/register */
+.app-page-bg {
+    -fx-background-color: linear-gradient(to bottom right, #0f172a, #1d4ed8);
+}
+
+/* Ensure ScrollPane background doesn’t hide page bg */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
 }
 
 .register-layout, .login-layout {
@@ -370,14 +582,6 @@
     -fx-max-height: 440;
     -fx-alignment: center;
     -fx-max-width: 600;
-}
-
-    -fx-text-alignment: center;
-    -fx-padding: 0 32 0 36;
-}
-
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
 
 .register-hero-illustration .illustration-glow {
@@ -659,12 +863,93 @@
     -fx-padding: 20;
 }
 
-/* Improved label hierarchy */
-.section-title {
-    -fx-font-size: 20px;
-    -fx-font-weight: 600;
-    -fx-text-fill: #0f172a; /* slate-900 */
+/* Grouped form section - Dark glass morphism container */
+.grouped-form-section {
+    -fx-background-color: rgba(15, 23, 42, 0.55);
+    -fx-background-radius: 28;
+    -fx-border-radius: 28;
+    -fx-border-color: rgba(96, 165, 250, 0.3);
+    -fx-border-width: 1.2;
+    -fx-padding: 26 26 30 26;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.25), 35, 0.3, 0, 15);
 }
+
+.grouped-form-section .section-title {
+    -fx-text-fill: #f8fafc;
+}
+
+.grouped-form-section .form-card {
+    -fx-background-color: rgba(30, 41, 59, 0.7);
+    -fx-border-color: rgba(96, 165, 250, 0.2);
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+}
+
+.grouped-form-section .field-label {
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+    -fx-font-weight: 600;
+}
+
+.grouped-form-section .modern-field {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: rgba(148, 163, 184, 0.3);
+    -fx-border-width: 1.2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 12 14;
+    -fx-text-fill: #f8fafc;
+    -fx-prompt-text-fill: rgba(226, 232, 240, 0.5);
+}
+
+.grouped-form-section .modern-field:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.15);
+    -fx-border-color: rgba(96, 165, 250, 0.4);
+}
+
+.grouped-form-section .modern-field:focused {
+    -fx-background-color: rgba(37, 99, 235, 0.2);
+    -fx-border-color: rgba(96, 165, 250, 0.7);
+    -fx-border-width: 1.6;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.35), 20, 0.3, 0, 8);
+}
+
+.grouped-form-section .modern-combo {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: rgba(148, 163, 184, 0.3);
+    -fx-border-width: 1.2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 12;
+}
+
+.grouped-form-section .modern-radio {
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+}
+
+.grouped-form-section .modern-radio .radio {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-border-color: rgba(148, 163, 184, 0.4);
+}
+
+.grouped-form-section .modern-radio:selected .radio {
+    -fx-background-color: #3b82f6;
+    -fx-border-color: #60a5fa;
+}
+
+/* Improved label hierarchy - Light text for dark theme */
+.section-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #f8fafc;
+}
+
+/* Field labels for dark theme */
+.field-label {
+    -fx-text-fill: rgba(226, 232, 240, 0.9);
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+}
+
 .logo {
     -fx-text-fill: var(-primary);
     -fx-font-size: 28px;
@@ -784,18 +1069,18 @@
 
 /* End of responsive & professional additions */
 
-/* Search Page Styling */
+/* Search Page Styling - Dark Theme */
 .search-root {
-    -fx-background-color: linear-gradient(to bottom, #f8fbff, #e2e8f0);
+    -fx-background-color: linear-gradient(to bottom right, #0f172a, #1d4ed8);
 }
 
 .search-header {
-    -fx-background-color: linear-gradient(to right, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.88));
-    -fx-background-radius: 36;
-    -fx-border-radius: 36;
-    -fx-border-color: rgba(191, 219, 254, 0.28);
-    -fx-border-width: 1.5;
-    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.45), 30, 0.32, 0, 18);
+    -fx-background-color: linear-gradient(to right, rgba(30, 64, 175, 0.85), rgba(59, 130, 246, 0.75));
+    -fx-background-radius: 0 0 36 36;
+    -fx-border-radius: 0 0 36 36;
+    -fx-border-color: rgba(96, 165, 250, 0.3);
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.3), 30, 0.3, 0, 15);
 }
 
 .search-title {
@@ -872,85 +1157,123 @@
     -fx-border-color: rgba(148, 197, 255, 0.4);
 }
 
-/* Search Results Table Styling */
+/* Search Results Table Styling - Light Theme for Visibility */
 .search-results-container {
     -fx-background-color: transparent;
     -fx-spacing: 20;
 }
 
 .search-table {
-    -fx-background-color: rgba(255, 255, 255, 0.92);
-    -fx-background-radius: 18;
-    -fx-border-radius: 18;
-    -fx-border-color: rgba(226, 232, 240, 0.6);
-    -fx-border-width: 1;
-    -fx-padding: 12;
-    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.1), 20, 0.25, 0, 8);
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(96, 165, 250, 0.4);
+    -fx-border-width: 2;
+    -fx-padding: 8;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.3), 25, 0.25, 0, 10);
 }
 
 .search-table:focused {
-    -fx-border-color: rgba(59, 130, 246, 0.35);
-    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.25), 26, 0.3, 0, 10);
+    -fx-border-color: rgba(59, 130, 246, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 30, 0.35, 0, 12);
 }
 
 .search-table .column-header-background {
-    -fx-background-color: linear-gradient(to right, rgba(37, 99, 235, 0.08), rgba(59, 130, 246, 0.08));
-    -fx-background-radius: 14;
-    -fx-padding: 8;
+    -fx-background-color: linear-gradient(to bottom, #1d4ed8, #2563eb);
+    -fx-background-radius: 12 12 0 0;
+    -fx-padding: 0;
 }
 
 .search-table .column-header {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-padding: 10 8;
+    -fx-padding: 12 8;
 }
 
 .search-table .column-header .label {
-    -fx-text-fill: #1e3a8a;
+    -fx-text-fill: white;
     -fx-font-size: 13px;
     -fx-font-weight: 700;
     -fx-text-alignment: center;
 }
 
 .search-table .table-row-cell {
-    -fx-background-color: transparent;
-    -fx-padding: 8 0;
-    -fx-border-color: transparent;
+    -fx-background-color: white;
+    -fx-padding: 4 0;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 0 0 1 0;
 }
 
 .search-table .table-row-cell:odd {
-    -fx-background-color: rgba(15, 23, 42, 0.02);
+    -fx-background-color: #f8fafc;
 }
 
 .search-table .table-row-cell:even {
-    -fx-background-color: rgba(59, 130, 246, 0.02);
+    -fx-background-color: white;
 }
 
 .search-table .table-row-cell:hover {
-    -fx-background-color: rgba(59, 130, 246, 0.08);
+    -fx-background-color: #dbeafe;
 }
 
 .search-table .table-row-cell:selected {
-    -fx-background-color: linear-gradient(to right, rgba(59, 130, 246, 0.18), rgba(37, 99, 235, 0.15));
-    -fx-border-color: rgba(59, 130, 246, 0.25);
+    -fx-background-color: #bfdbfe;
+    -fx-border-color: #3b82f6;
     -fx-border-width: 0 0 1 0;
 }
 
 .search-table .table-cell {
-    -fx-padding: 12 10;
-    -fx-text-fill: #1f2937;
+    -fx-padding: 10 8;
+    -fx-text-fill: #1e293b;
     -fx-font-size: 13px;
     -fx-border-color: transparent;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.search-table .table-cell .text {
+    -fx-fill: #1e293b;
 }
 
 .search-table .table-cell:selected {
-    -fx-text-fill: #1d4ed8;
+    -fx-text-fill: #1e40af;
     -fx-font-weight: 500;
+}
+
+.search-table .table-cell:selected .text {
+    -fx-fill: #1e40af;
 }
 
 .search-table .virtual-flow {
     -fx-padding: 0;
     -fx-border-color: transparent;
+    -fx-background-color: white;
+}
+
+.search-table .virtual-flow .clipped-container .sheet .list-cell {
+    -fx-background-color: white;
+}
+
+.search-table .scroll-bar {
+    -fx-background-color: #f1f5f9;
+}
+
+.search-table .scroll-bar .thumb {
+    -fx-background-color: #94a3b8;
+    -fx-background-radius: 5;
+}
+
+.search-table .scroll-bar .thumb:hover {
+    -fx-background-color: #64748b;
+}
+
+/* Table placeholder text */
+.search-table .placeholder {
+    -fx-background-color: white;
+}
+
+.search-table .placeholder .label {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 14px;
 }
 
 /* Status Badge Styling */

@@ -15,13 +15,13 @@
             fitToWidth="true">
 
     <content>
-        <VBox spacing="40" alignment="TOP_CENTER">
+        <VBox spacing="40" alignment="TOP_CENTER" styleClass="app-page-bg">
             <padding>
                 <Insets top="40" right="40" bottom="40" left="40"/>
             </padding>
         
         <!-- Loan Rejection Report Section -->
-            <VBox spacing="25" alignment="TOP_CENTER" styleClass="form-card">
+            <VBox spacing="25" alignment="TOP_CENTER" styleClass="result-card">
                 <padding>
                     <Insets top="30" right="30" bottom="30" left="30"/>
                 </padding>
@@ -31,26 +31,25 @@
                     <HBox spacing="10" alignment="CENTER_LEFT">
                     
                         <VBox alignment="CENTER_LEFT" spacing="2">
-                            <Label text="LoanShield" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;"/>
-                       
+                            <Label text="LoanShield" styleClass="logo"/>
                         </VBox>
                     </HBox>
                     <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
                     <VBox alignment="CENTER_RIGHT">
-                        <Label text="Report ID: RPT-2024-0315-002" style="-fx-text-fill: white;"/>
-                        <Label text="Generated: March 15, 2024" style="-fx-text-fill: white;"/>
+                        <Label text="Report ID: RPT-2024-0315-002"/>
+                        <Label text="Generated: March 15, 2024"/>
                     </VBox>
                 </HBox>
                 
-                <!-- Background color bar (dark red) -->
-                <Region style="-fx-background-color: #8B0000; -fx-pref-height: 50;"/>
+                <!-- Header bar decoration -->
+                <Region styleClass="header-bar-rejected"/>
 
                 <!-- Rejection Status -->
                 <HBox spacing="15" alignment="CENTER_LEFT">
-                    <Label text="✕" style="-fx-font-size: 24px; -fx-text-fill: #dc2626; -fx-font-weight: bold;"/>
+                    <Label text="✕" styleClass="rejected-title"/>
                     <VBox spacing="5">
-                        <Label text="Application Not Approved" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #dc2626;"/>
-                        <Label text="Unfortunately, your loan application does not meet our current approval criteria." style="-fx-text-fill: #dc2626;"/>
+                        <Label text="Application Not Approved" styleClass="rejected-title"/>
+                        <Label text="Unfortunately, your loan application does not meet our current approval criteria."/>
                     </VBox>
                 </HBox>
 
@@ -82,15 +81,15 @@
 
                 <!-- Risk Assessment Result -->
                 <VBox spacing="10" alignment="CENTER">
-                    <Label fx:id="riskScoreLabel" text="45" style="-fx-font-size: 48px; -fx-font-weight: bold;"/>
-                    <Label fx:id="riskProfileLabel" text="Poor Risk Profile" style="-fx-text-fill: #dc2626; -fx-font-size: 16px;"/>
+                    <Label fx:id="riskScoreLabel" text="45" styleClass="risk-score-display"/>
+                    <Label fx:id="riskProfileLabel" text="Poor Risk Profile" styleClass="risk-profile-poor"/>
                 </VBox>
 
                 <!-- Rejection Reasons -->
-                <VBox spacing="10" style="-fx-background-color: #fef2f2; -fx-border-color: #dc2626; -fx-padding: 20;">
+                <VBox spacing="15" styleClass="info-section">
                     <HBox spacing="10" alignment="CENTER_LEFT">
-                        <Label text="ℹ" style="-fx-font-size: 16px; -fx-text-fill: #2563eb;"/>
-                        <Label text="Primary Rejection Factors" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2563eb;"/>
+                        <Label text="ℹ" styleClass="info-title"/>
+                        <Label text="Primary Rejection Factors" styleClass="info-title"/>
                     </HBox>
                     
                     <VBox spacing="8" fx:id="rejectionReasonsContainer">
@@ -101,16 +100,14 @@
                 <!-- Signature -->
                 <HBox spacing="20" alignment="CENTER_LEFT">
                     <VBox spacing="5">
-                        
                         <Label text="Date: March 15, 2024"/>
                     </VBox>
 
                     <Region HBox.hgrow="ALWAYS"/>
 
-                    <VBox alignment="CENTER" style="-fx-border-color: #dc2626; -fx-border-width: 2; -fx-padding: 10;">
-                        <Label text="REJECTED" style="-fx-text-fill: #dc2626; -fx-font-weight: bold;"/>
+                    <VBox alignment="CENTER" styleClass="rejected-badge">
+                        <Label text="REJECTED"/>
                         <Label text="LoanShield"/>
-                        
                     </VBox>
                 </HBox>
 
