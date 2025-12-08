@@ -14,6 +14,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -53,6 +55,41 @@ public class SearchController {
         colLoanTerm.setCellValueFactory(new PropertyValueFactory<>("loanTermYears"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("applicationStatus"));
         colRisk.setCellValueFactory(new PropertyValueFactory<>("riskScore"));
+
+        // Apply light text cell factory for dark theme visibility
+        applyLightTextCellFactory(colId);
+        applyLightTextCellFactory(colNic);
+        applyLightTextCellFactory(colFullName);
+        applyLightTextCellFactory(colPhone);
+        applyLightTextCellFactory(colEmail);
+        applyLightTextCellFactory(colMonthlyIncome);
+        applyLightTextCellFactory(colLoanAmount);
+        applyLightTextCellFactory(colLoanTerm);
+        applyLightTextCellFactory(colStatus);
+        applyLightTextCellFactory(colRisk);
+    }
+
+    // Helper: Sets dark text color for table cells on light background
+    private <T> void applyLightTextCellFactory(TableColumn<ApplicationRow, T> column) {
+        column.setCellFactory(col -> new TableCell<ApplicationRow, T>() {
+            private final Label label = new Label();
+            {
+                label.setStyle("-fx-text-fill: #1e293b; -fx-font-size: 13px;");
+            }
+            
+            @Override
+            protected void updateItem(T item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    label.setText(item.toString());
+                    setGraphic(label);
+                    setText(null);
+                }
+            }
+        });
     }
 
     @FXML
