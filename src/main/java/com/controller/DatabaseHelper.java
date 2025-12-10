@@ -11,23 +11,32 @@ import java.sql.*;
 // 3. Simplifying database interactions for other parts of the application
 public class DatabaseHelper {
 
-    private static final String DB_URL = "jdbc:sqlite:database/loanshield.db";
+    private static final String DB_PATH;
+    private static final String DB_URL;
+    
+    // Public method to get DB URL for other classes
+    public static String getDbUrl() {
+        return DB_URL;
+    }
 
     static {
+        // Determine database path - use project directory
+        String userDir = System.getProperty("user.dir");
+        DB_PATH = Paths.get(userDir, "database", "loanshield.db").toAbsolutePath().toString();
+        DB_URL = "jdbc:sqlite:" + DB_PATH;
+        System.out.println("Database path: " + DB_PATH);
+        
         try {
             // Ensure the SQLite driver is loaded and registered
             Class.forName("org.sqlite.JDBC");
 
             // Ensure parent directory exists to avoid path errors
-            Path dbDir = Paths.get("database");
+            Path dbDir = Paths.get(userDir, "database");
             if (!Files.exists(dbDir)) {
                 Files.createDirectories(dbDir);
             }
 
             try (Connection conn = DriverManager.getConnection(DB_URL)) {
-                // Drop legacy table if it exists
-                String dropUserResults = "DROP TABLE IF EXISTS user_results";
-
                 String createApplications = """
                     CREATE TABLE IF NOT EXISTS applications (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -53,17 +62,9 @@ public class DatabaseHelper {
                         rejection_reasons TEXT
                     );
                 """;
-                String createuser = """
-                        CREATE TABLE IF NOT EXISTS users (
-                        id INTEGER PRIMERY KEY AUTOINCREMENET,
-                        username TEXT UNIQUE NOT NULL,
-                        password TEXT NOT NULL,
-                        secret key TEXT NOT NULL);
-                        """;
 
-                conn.createStatement().execute(dropUserResults);
                 conn.createStatement().execute(createApplications);
-                conn.createStatement().execute(createuser);
+                // Note: users table is managed by AuthRepository
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,6 +87,10 @@ public class DatabaseHelper {
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """;
 
+        System.out.println("=== Saving Application to Database ===");
+        System.out.println("NIC: " + data.getNic());
+        System.out.println("Name: " + data.getFullName());
+        
         try (Connection conn = DriverManager.getConnection(DB_URL);
              PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
 
@@ -110,9 +115,13 @@ public class DatabaseHelper {
             pstmt.setInt(19, riskScore);
             pstmt.setString(20, rejectionReasons == null ? null : String.join("; ", rejectionReasons));
 
-            pstmt.executeUpdate();
-            return true;
+            int rowsAffected = pstmt.executeUpdate();
+            System.out.println("=== Application Saved Successfully ===");
+            System.out.println("Rows affected: " + rowsAffected);
+            return rowsAffected > 0;
         } catch (SQLException e) {
+            System.out.println("=== ERROR: Failed to save application ===");
+            System.out.println("Error message: " + e.getMessage());
             e.printStackTrace();
             return false;
         }
