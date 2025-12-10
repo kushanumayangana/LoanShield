@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -34,6 +36,8 @@ public class rejectController implements Initializable {
     @FXML private Label riskScoreLabel;
     @FXML private Label riskProfileLabel;
     @FXML private VBox rejectionReasonsContainer;
+    @FXML private Label generatedDateLabel;
+    @FXML private Label footerDateLabel;
     //Encapsulation
     // New Save Button (make sure to add this to your reject.fxml and fx:id it properly)
     @FXML private Button saveButton;
@@ -56,6 +60,15 @@ public class rejectController implements Initializable {
         nicLabel.setText(nic);
         applicationDateLabel.setText(applicationDate);
         loanAmountLabel.setText(String.format("LKR %,.0f", loanAmount));
+
+        // Set current date for generated and footer labels
+        String currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("MMMM dd, yyyy"));
+        if (generatedDateLabel != null) {
+            generatedDateLabel.setText("Generated: " + currentDate);
+        }
+        if (footerDateLabel != null) {
+            footerDateLabel.setText("Date: " + currentDate);
+        }
 
         riskScoreLabel.setText(String.valueOf(riskScore));
 
@@ -91,10 +104,10 @@ public class rejectController implements Initializable {
                 reasonBox.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
 
                 Label bulletPoint = new Label("•");
-                bulletPoint.setStyle("-fx-text-fill: #dc2626; -fx-font-weight: bold; -fx-font-size: 14px;");
+                bulletPoint.setStyle("-fx-text-fill: #f87171; -fx-font-weight: bold; -fx-font-size: 14px;");
 
                 Label reasonLabel = new Label(reason);
-                reasonLabel.setStyle("-fx-text-fill: #374151; -fx-font-size: 14px;");
+                reasonLabel.setStyle("-fx-text-fill: #e2e8f0; -fx-font-size: 14px;");
                 reasonLabel.setWrapText(true);
 
                 reasonBox.getChildren().addAll(bulletPoint, reasonLabel);
@@ -105,10 +118,10 @@ public class rejectController implements Initializable {
             reasonBox.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
 
             Label bulletPoint = new Label("•");
-            bulletPoint.setStyle("-fx-text-fill: #dc2626; -fx-font-weight: bold; -fx-font-size: 14px;");
+            bulletPoint.setStyle("-fx-text-fill: #f87171; -fx-font-weight: bold; -fx-font-size: 14px;");
 
             Label reasonLabel = new Label("Risk score below minimum threshold for approval");
-            reasonLabel.setStyle("-fx-text-fill: #374151; -fx-font-size: 14px;");
+            reasonLabel.setStyle("-fx-text-fill: #e2e8f0; -fx-font-size: 14px;");
 
             reasonBox.getChildren().addAll(bulletPoint, reasonLabel);
             rejectionReasonsContainer.getChildren().add(reasonBox);
