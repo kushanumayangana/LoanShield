@@ -86,18 +86,6 @@
                             <TextField fx:id="nicField" styleClass="modern-field" promptText="123456789V"/>
                         </VBox>
                     </HBox>
-
-                    <HBox spacing="20">
-                        <VBox spacing="8" HBox.hgrow="ALWAYS">
-                            <Label text="Phone Number *" styleClass="field-label"/>
-                            <TextField fx:id="mobileField" styleClass="modern-field" promptText="+94 77 123 4567"/>
-                        </VBox>
-                        
-                        <VBox spacing="8" HBox.hgrow="ALWAYS">
-                            <Label text="Email Address *" styleClass="field-label"/>
-                            <TextField fx:id="emailField" styleClass="modern-field" promptText="your.email@example.com"/>
-                        </VBox>
-                    </HBox>
                     </VBox>
 
                     <!-- Employment and Job Details Card -->

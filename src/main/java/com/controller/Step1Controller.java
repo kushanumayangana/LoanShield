@@ -31,7 +31,7 @@ public class Step1Controller implements Initializable {
     private final LoanApplicationData applicationData = new LoanApplicationData();
 
     // Personal Info
-    @FXML private TextField fullNameField, nicField, mobileField, emailField;
+    @FXML private TextField fullNameField, nicField;
 
     // Employment
     @FXML private TextField employmentDurationField, monthlyIncomeField;
@@ -122,7 +122,8 @@ public class Step1Controller implements Initializable {
                 controller.setNicNumber(applicationData.getNic());
 
                 // Persist full application
-                DatabaseHelper.saveApplication(applicationData, approvalResult.getRiskScore(), null);
+                boolean saved = DatabaseHelper.saveApplication(applicationData, approvalResult.getRiskScore(), null);
+                System.out.println("Application saved to database: " + saved);
 
             } else {
                 // Load reject.fxml from classpath root
@@ -142,7 +143,8 @@ public class Step1Controller implements Initializable {
                 controller.setNicNumber(applicationData.getNic());
 
                 // Persist full application with rejection reasons
-                DatabaseHelper.saveApplication(applicationData, approvalResult.getRiskScore(), approvalResult.getReasons());
+                boolean saved = DatabaseHelper.saveApplication(applicationData, approvalResult.getRiskScore(), approvalResult.getReasons());
+                System.out.println("Application saved to database: " + saved);
             }
 
             stage.setScene(new Scene(root));
@@ -185,8 +187,6 @@ public class Step1Controller implements Initializable {
 
         valid &= validateField(fullNameField, "Full Name");
         valid &= validateField(nicField, "NIC Number");
-        valid &= validateField(mobileField, "Phone Number");
-        valid &= validateField(emailField, "Email Address");
 
         valid &= validateField(employmentDurationField, "Employment Duration");
         valid &= validateField(monthlyIncomeField, "Monthly Income");
@@ -290,8 +290,8 @@ public class Step1Controller implements Initializable {
     private void saveFormData() {
         applicationData.setFullName(fullNameField.getText().trim());
         applicationData.setNic(nicField.getText().trim());  // NIC stored here
-        applicationData.setPhone(mobileField.getText().trim());
-        applicationData.setEmail(emailField.getText().trim());
+        applicationData.setPhone("");
+        applicationData.setEmail("");
 
         applicationData.setAddress("");
         applicationData.setEmploymentType("General");
