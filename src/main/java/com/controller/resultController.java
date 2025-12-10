@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -35,6 +37,8 @@ public class resultController implements Initializable {
     @FXML private Label interestRateLabel;
     @FXML private Label loanTermLabel;
     @FXML private Label monthlyPaymentLabel;
+    @FXML private Label generatedDateLabel;
+    @FXML private Label footerDateLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -55,6 +59,15 @@ public class resultController implements Initializable {
         nicLabel.setText(nic);
         applicationDateLabel.setText(applicationDate);
         loanAmountLabel.setText(String.format("LKR %,.0f", loanAmount));
+        
+        // Set current date for generated and footer labels
+        String currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("MMMM dd, yyyy"));
+        if (generatedDateLabel != null) {
+            generatedDateLabel.setText("Generated: " + currentDate);
+        }
+        if (footerDateLabel != null) {
+            footerDateLabel.setText("Date: " + currentDate);
+        }
         
         riskScoreLabel.setText(String.valueOf(riskScore));
         

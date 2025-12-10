@@ -171,22 +171,26 @@
 
 /* Submit button - Animated gradient with glow */
 .submit-button {
-    -fx-background-color: linear-gradient(to right, #2563eb, #1d4ed8);
+    -fx-background-color: linear-gradient(to right, #3b82f6, #2563eb);
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-font-size: 16px;
-    -fx-padding: 14 28;
-    -fx-background-radius: 14;
-    -fx-border-radius: 14;
+    -fx-font-size: 18px;
+    -fx-padding: 16 40;
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-border-color: #93c5fd;
+    -fx-border-width: 2;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 15, 0.3, 0, 6);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.7), 25, 0.5, 0, 8);
 }
 
 .submit-button:hover {
-    -fx-background-color: linear-gradient(to right, #1d4ed8, #1e3a8a);
-    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.6), 25, 0.4, 0, 10);
-    -fx-scale-x: 1.03;
-    -fx-scale-y: 1.03;
+    -fx-background-color: linear-gradient(to right, #60a5fa, #3b82f6);
+    -fx-border-color: #bfdbfe;
+    -fx-border-width: 2.5;
+    -fx-effect: dropshadow(gaussian, rgba(96, 165, 250, 0.9), 35, 0.6, 0, 12);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
 }
 
 /* Secondary/Cancel button style */
@@ -920,6 +924,47 @@
     -fx-background-radius: 12;
     -fx-border-radius: 12;
     -fx-padding: 10 12;
+}
+
+.grouped-form-section .modern-combo .list-cell {
+    -fx-text-fill: #f8fafc;
+    -fx-background-color: transparent;
+}
+
+.grouped-form-section .modern-combo .list-cell:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.3);
+}
+
+/* ComboBox dropdown popup styling */
+.combo-box-popup .list-view {
+    -fx-background-color: rgba(30, 41, 59, 0.95);
+    -fx-border-color: rgba(96, 165, 250, 0.4);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: #f8fafc;
+    -fx-background-color: transparent;
+    -fx-padding: 8 12;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.3);
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: rgba(59, 130, 246, 0.5);
+    -fx-text-fill: #ffffff;
+}
+
+/* ComboBox arrow button styling */
+.modern-combo .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.modern-combo .arrow {
+    -fx-background-color: #94a3b8;
 }
 
 .grouped-form-section .modern-radio {

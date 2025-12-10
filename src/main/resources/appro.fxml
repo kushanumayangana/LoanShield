@@ -38,7 +38,7 @@
                     <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
                     <VBox alignment="CENTER_RIGHT">
                         <Label text="Report ID: RPT-2024-0315-001"/>
-                        <Label text="Generated: March 15, 2024"/>
+                        <Label fx:id="generatedDateLabel" text="Generated: March 15, 2024"/>
                     </VBox>
                 </HBox>
                 
@@ -105,7 +105,7 @@
                 <!-- Signature -->
                 <HBox spacing="20" alignment="CENTER_LEFT">
                     <VBox spacing="5">
-                        <Label text="Date: March 15, 2024"/>
+                        <Label fx:id="footerDateLabel" text="Date: March 15, 2024"/>
                     </VBox>
 
                     <Region HBox.hgrow="ALWAYS"/>

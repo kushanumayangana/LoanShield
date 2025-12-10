@@ -6,38 +6,40 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.controller.SearchController"
-            stylesheets="@/css/style.css"
-            styleClass="search-root">
+            style="-fx-background-color: linear-gradient(to bottom, #3b82f6, #1d4ed8);">
     <top>
-        <VBox spacing="20" alignment="CENTER" styleClass="search-header">
+        <VBox spacing="20" alignment="CENTER">
             <padding>
                 <Insets top="40" right="40" bottom="40" left="40"/>
             </padding>
-            <Label text="Search Applications" styleClass="search-title"/>
-            <HBox spacing="12" alignment="CENTER" maxWidth="600" styleClass="search-bar-container">
-                <TextField fx:id="searchField" promptText="Enter NIC to search" styleClass="search-field" HBox.hgrow="ALWAYS"/>
-                <Button text="Search" onAction="#handleSearch" styleClass="search-button"/>
-                <Button text="Back" onAction="#handleBack" styleClass="search-back-button"/>
+            <Label text="Search Applications" style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;"/>
+            <HBox spacing="12" alignment="CENTER" maxWidth="600">
+                <TextField fx:id="searchField" promptText="Enter NIC to search" prefWidth="300" 
+                           style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 10 15; -fx-font-size: 14px;" HBox.hgrow="ALWAYS"/>
+                <Button text="Search" onAction="#handleSearch" 
+                        style="-fx-background-color: #1d4ed8; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10 25; -fx-font-size: 14px; -fx-cursor: hand;"/>
+                <Button text="Back" onAction="#handleBack" 
+                        style="-fx-background-color: #475569; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10 25; -fx-font-size: 14px; -fx-cursor: hand;"/>
             </HBox>
         </VBox>
     </top>
     <center>
-        <VBox spacing="20" styleClass="search-results-container">
+        <VBox spacing="20" VBox.vgrow="ALWAYS">
             <padding>
                 <Insets top="20" right="40" bottom="40" left="40"/>
             </padding>
-            <TableView fx:id="resultsTable" styleClass="search-table">
+            <TableView fx:id="resultsTable" VBox.vgrow="ALWAYS" minHeight="400" 
+                       style="-fx-background-color: white; -fx-background-radius: 15;">
+                <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
                 <columns>
-                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
-                    <TableColumn fx:id="colNic" text="NIC" prefWidth="120"/>
-                    <TableColumn fx:id="colFullName" text="Full Name" prefWidth="160"/>
-                    <TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
-                    <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
-                    <TableColumn fx:id="colMonthlyIncome" text="Monthly Income" prefWidth="120"/>
-                    <TableColumn fx:id="colLoanAmount" text="Loan Amount" prefWidth="120"/>
-                    <TableColumn fx:id="colLoanTerm" text="Term (yrs)" prefWidth="90"/>
-                    <TableColumn fx:id="colStatus" text="Status" prefWidth="110"/>
-                    <TableColumn fx:id="colRisk" text="Risk" prefWidth="70"/>
+                    <TableColumn fx:id="colId" text="ID" minWidth="50"/>
+                    <TableColumn fx:id="colNic" text="NIC" minWidth="100"/>
+                    <TableColumn fx:id="colFullName" text="Full Name" minWidth="150"/>
+                    <TableColumn fx:id="colMonthlyIncome" text="Income" minWidth="100"/>
+                    <TableColumn fx:id="colLoanAmount" text="Loan Amt" minWidth="100"/>
+                    <TableColumn fx:id="colLoanTerm" text="Term" minWidth="60"/>
+                    <TableColumn fx:id="colStatus" text="Status" minWidth="100"/>
+                    <TableColumn fx:id="colRisk" text="Risk" minWidth="60"/>
                 </columns>
             </TableView>
         </VBox>
